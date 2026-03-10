@@ -30,3 +30,19 @@ entries:
         - title: 3. Define the transformation in B
           url: /transformation.html
           output: web
+        
+      - title: "Advanced"
+        output: web
+        subfolderitems:
+          
+          - title: Theorem proving
+            url: /todo.html
+            output: web
+          
+          - title: Refinements
+            url: /todo.html
+            output: web
+
+          - title: B System
+            url: /todo.html
+            output: web

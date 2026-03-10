@@ -108,3 +108,23 @@ INVARIANT
 </pre>
 
 ## Step 3 — Specify the transformation in B
+
+1. Right click on folder `model` of your transformation project.
+2. Select **New → File**
+3. Name the file (e.g. `transformation.mch`).
+
+<center>
+{% include image.html file="file.png" max-width="850" %}
+</center>
+
+{% include tip.html content="There are several strategies for specifying transformations in B. In this tutorial we use the inclusion principle of Classical B in order to reuse the utility operations defined in the `pivot` machine." %}
+
+Below is an example of the content of file `transformation.mch`
+
+<pre>
+MACHINE
+    transformation
+INCLUDES
+    pivot
+END
+</pre>
