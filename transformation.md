@@ -111,20 +111,30 @@ INVARIANT
 
 1. Right click on folder `model` of your transformation project.
 2. Select **New → File**
-3. Name the file (e.g. `transformation.mch`).
+3. Name the file. For example `transformation.mch`
 
 <center>
 {% include image.html file="file.png" max-width="850" %}
 </center>
 
-{% include tip.html content="There are several strategies for specifying transformations in B. In this tutorial we use the inclusion principle of Classical B in order to reuse the utility operations defined in the `pivot` machine." %}
 
-Below is an example of the content of file `transformation.mch`
+{% include callout.html content="
+There are several strategies for specifying transformations in B. In this tutorial we use the inclusion principle of Classical B in order to reuse the utility operations defined in the `pivot` machine.
+
+Note that B is not a programming language. A recommended approach is to first think about the properties that the transformation must guarantee before considering how the transformation should be implemented.
+
+Below is an example of the content of the file `transformation.mch`.
+" type="primary" %}
 
 <pre>
 MACHINE
-    transformation
+	transformation
 INCLUDES
-    pivot
+	pivot
+DEFINITIONS
+	familyOf == 
+PROPERTIES
+	card(PERSON) = card(MEMBER)
+OPERATIONS
 END
 </pre>
