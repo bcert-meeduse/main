@@ -84,27 +84,27 @@ PROPERTIES
 
 <pre>
 VARIABLES
-    Pivot,
-    Person,
-    persons_PersonModel,
-    Male,
-    Female,
-    A_families_pivot,
-    A_persons_pivot,
-    A_persons_personModel,
-    name
+	Pivot,
+	Person,
+	PersonModel,
+	Male,
+	Female,
+	A_families_pivot,
+	A_persons_pivot,
+	A_persons_personModel,
+	name
 
 INVARIANT
-    Pivot : FIN(PIVOT) &
-    Person : FIN(PERSON) &
-    persons_PersonModel : FIN(PERSONMODEL) &
-    Male <: Person &
-    Female <: Person &
-    A_families_pivot : Pivot --> FamilyModel &
-    A_persons_pivot : Pivot --> persons_PersonModel &
-    A_persons_personModel : Person +-> persons_PersonModel &
-    name : Person <-> STRING &
-    Male /\ Female = {}
+	Pivot : FIN(PIVOT) &
+	Person : FIN(PERSON) &
+	PersonModel : FIN(PERSONMODEL) &
+	Male <: Person &
+	Female <: Person &
+	A_families_pivot : Pivot --> FamilyModel &
+	A_persons_pivot : Pivot --> PersonModel &
+	A_persons_personModel : Person +-> PersonModel &
+	name : Person <-> STRING &
+	Female /\ Male = {}
 </pre>
 
 ## Step 3 — Specify the transformation in B

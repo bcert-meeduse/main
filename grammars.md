@@ -15,11 +15,11 @@ This tutorial explains how to create **Xtext grammars** that can be used with **
 4. Click **Next**
 
 5. Fill the following information:
-  - `Project name`
-  - `Language name`
-  - `File extension`
+  - `Project name` (e.g. `org.xtext.families`)
+  - `Language name` (e.g. `org.xtext.Families`)
+  - `File extension` (e.g. `fam`)
 
-{% include callout.html content="Example: define two languages `org.xtext.families` (with extension `.fam`) and `org.xtext.persons` (with extension `.per`)." type="primary" %} 
+{% include callout.html content="In the following steps we use two languages `org.xtext.families` (with extension `.fam`) and `org.xtext.persons` (with extension `.per`)." type="primary" %} 
 
 Click **Finish**. Xtext will generate the following components:
 
