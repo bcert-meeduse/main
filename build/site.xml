@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/fr.meeduse.bcert_1.0.0.202603091345.jar" id="fr.meeduse.bcert" version="1.0.0.202603091345">
+      <category name="BCerT"/>
+   </feature>
+   <category-def name="BCerT" label="BCerT">
+      <description>
+         BCerT is an Eclipse-based extension of Meeduse for certifying  model transformations and grammar-to-grammar transpilation with B.
+      </description>
+   </category-def>
+</site>

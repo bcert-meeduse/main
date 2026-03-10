@@ -1,0 +1,32 @@
+entries:
+- title: sidebar
+  folders:
+
+  - title: Outline
+    output: web
+    folderitems:
+
+    - title: Home
+      url: /index.html
+      output: web
+
+    - title: Installation
+      url: /install.html
+      output: web
+      subfolders:
+
+      - title: "User guide"
+        output: web
+        subfolderitems:
+
+        - title: 1. Create input/output languages
+          url: /grammars.html
+          output: web
+
+        - title: 2. Create transformation project
+          url: /bcert_project.html
+          output: web
+
+        - title: 3. Define the transformation in B
+          url: /transformation.html
+          output: web
