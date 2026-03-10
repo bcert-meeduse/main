@@ -18,7 +18,7 @@ toc: true
 
 4. Select **Patch with constants**.
 
-5. Click on **Ok**.
+5. Click on **Ok**
 
 <center>
 {% include image.html file="constants.png" max-width="850" %}
