@@ -67,6 +67,7 @@ CONSTANTS
     A_families_personModel
 
 PROPERTIES
+    card(PERSON) = card(MEMBER) & /* ensures completeness */
     Family : FIN(FAMILY) &
     Member : FIN(MEMBER) &
     FamilyModel : FIN(FAMILYMODEL) &
@@ -79,6 +80,8 @@ PROPERTIES
     A_sons_family : Member +-> Family &
     A_families_personModel : Family +-> families_PersonModel
 </pre>
+
+{% include warning.html content="Be sure that set PERSON is declared after set MEMBER, and add predicate card(PERSON) = card(MEMBER) to the PROPERTIES clause as presented above." %}
 
 ### Output model elements as VARIABLES
 
@@ -136,11 +139,9 @@ DEFINITIONS
                 \/ A_theFather_family~ ;
     isFemale(self) == self : dom(A_daughters_family ) \/ ran(A_theMother_family) ;
 PROPERTIES
-    card(PERSON) = card(MEMBER)         /* ensures completeness */
-    & familyOf : Member --> Family      /* a member must be in one family */
+    familyOf : Member --> Family      /* a member must be in one family */
     & lastName : Family --> STRING      /* lastName is mandatory */
     & firstName : Member --> STRING     /* firstName is mandatory */
-
 VARIABLES
     mapped  /* for traceability */
 INVARIANT
@@ -148,7 +149,7 @@ INVARIANT
     & mapped[Male]      <: dom(A_sons_family) \/ ran(A_theFather_family)
     & mapped[Female]    <: dom(A_daughters_family ) \/ ran(A_theMother_family)
     & A_persons_personModel : Person --> PersonModel    /* a person must be belong to a Person Model */
-    & name : Person --> STRING                          /* person name is mandatory */
+    & dom(name) = Person                                /* person name is mandatory */
 INITIALISATION
     mapped := {}
 OPERATIONS
@@ -158,13 +159,13 @@ Member2Person =
         aPerson : PERSON & aPerson /: Person &
         pModel : PersonModel
     THEN
-        IF isFemale(ss) THEN
+        IF isFemale(aMember) THEN
             Female_NEW(aPerson)
         ELSE
             Male_NEW(aPerson)
-        END ||
-        SetName(aPerson, {firstName(aMember), lastName(familyOf(aMember))})
-        AddPersons(pModel, aPerson)||
+        END ;
+        SetName(aPerson, {firstName(aMember), lastName(familyOf(aMember))});
+        AddPersons(pModel, aPerson);
         mapped := mapped \/ {(aPerson |-> aMember)}
     END
 END

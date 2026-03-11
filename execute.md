@@ -13,3 +13,8 @@ Step 4 generated a Modeling project in the Eclipse run-time that contains, for e
 {% include image.html file="menu.png"%}
 
 ## Debugging the transformation
+
+- Right click on the root entry of a `.pivot`file
+- Select **Execute model --> transformation.mch**
+- Click on **Finish**
+{% include image.html file="debug.png"%}
