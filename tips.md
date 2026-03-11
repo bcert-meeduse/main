@@ -5,11 +5,11 @@ permalink: /tips.html
 toc: true
 ---
 
-## Animation preferences
+## Animation/Execution preferences
 
-The [interactive debugging](/execute.html#interactive-debugging) and [automatic execution](/execute.html#automatic-execution) shown in Step 5 rely on the animation capabilities of [**ProB**](https://prob.hhu.de). ProB allows you to configure its behavior through preference definitions added to the B machine.
+{% include callout.html content="The [interactive debugging](/execute.html#interactive-debugging) and [automatic execution](/execute.html#automatic-execution) shown in Step 5 rely on the animation capabilities of [**ProB**](https://prob.hhu.de). ProB allows one to configure its behavior directly in the B machine through  definitions." type="primary" %} 
 
-These options influence how execution is explored, how values are displayed, and how invariant properties are checked during animation. For example:
+The commonly used ProB preferences in BCerT are:
 
 <pre>
 DEFINITIONS
@@ -33,21 +33,20 @@ DEFINITIONS
 
 {% include tip.html content="For interactive debugging, it is recommended to keep the number of enabled operations small and to enable invariant checking, so that the execution trace remains easy to understand and correctness violations are detected immediately." %}
 
-## Defining value domains for animation
+## Solving value domains for abstract sets
 
 {% include callout.html content="For the transformation to execute correctly, ProB must be able to construct a **sufficient data set** for all abstract sets used in the B machine." type="primary" %} 
-
-
 
 In our example, the values of set `MEMBER` are derived from the input model. Therefore, the cardinality of `MEMBER` is known from the beginning of the animation.
 
 Since the transformation is expected to create one `PERSON` for each `MEMBER`, ProB must evaluate `MEMBER` first so that it can construct a compatible domain for `PERSON`. For this reason, `PERSON` must be declared **after** `MEMBER`.
 
-If `PERSON` is declared independently without sufficient constraints, ProB may fail to generate enough elements to support the creation of output instances. In such a case, animation may stop prematurely without ensuring completeness.
+To ensure that the output domain is large enough, the cardinality of `PERSON` is constrained to match the cardinality of `MEMBER`:
 
-To ensure that the output domain is large enough, the cardinality of `PERSON` has been constrained to match the input domain:
-
-<pre>card(PERSON) = card(MEMBER)</pre>
+<pre>
+PROPERTIES
+    card(PERSON) = card(MEMBER)
+</pre>
 
 {% include tip.html content="In practice, ProB behaves as a constraint solver: it computes valuations of abstract sets that satisfy all properties and invariants. By linking the cardinalities of input and output sets, you guarantee the **completeness of the animation** and the successful execution of the transformation.." %}
 
