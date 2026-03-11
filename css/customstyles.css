@@ -1273,3 +1273,24 @@ background-color: #e6e6e6;
 color: #333 !important;
 font-weight: 600;
 }
+
+#tg-sb-sidebar {
+width: 260px;
+}
+
+#mysidebar {
+position: fixed;
+top: 80px;
+left: 20px;
+
+max-height: calc(100vh - 100px);
+overflow-y: auto;
+z-index: 1000;
+background: #fafafa;
+box-shadow: 6px 0 14px rgba(0,0,0,0.18);
+border-right: 1px solid #ddd;
+}
+
+#tg-sb-content {
+margin-left: 310px;
+}
