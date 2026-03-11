@@ -127,14 +127,45 @@ Below is an example of the content of the file `transformation.mch`.
 " type="primary" %}
 
 <pre>
-MACHINE
-	transformation
-INCLUDES
-	pivot
+MACHINE     transformation
+INCLUDES    pivot
 DEFINITIONS
-	familyOf == 
+    familyOf == A_daughters_family 
+                \/ A_sons_family 
+                \/ A_theMother_family~ 
+                \/ A_theFather_family~ ;
+    isFemale(self) == self : dom(A_daughters_family ) \/ ran(A_theMother_family) ;
 PROPERTIES
-	card(PERSON) = card(MEMBER)
+    card(PERSON) = card(MEMBER)         /* ensures completeness */
+    & familyOf : Member --> Family      /* a member must be in one family */
+    & lastName : Family --> STRING      /* lastName is mandatory */
+    & firstName : Member --> STRING     /* firstName is mandatory */
+
+VARIABLES
+    mapped  /* for traceability */
+INVARIANT
+    mapped : Person >-> Member  
+    & mapped[Male]      <: dom(A_sons_family) \/ ran(A_theFather_family)
+    & mapped[Female]    <: dom(A_daughters_family ) \/ ran(A_theMother_family)
+    & A_persons_personModel : Person --> PersonModel    /* a person must be belong to a Person Model */
+    & name : Person --> STRING                          /* person name is mandatory */
+INITIALISATION
+    mapped := {}
 OPERATIONS
+Member2Person =
+    ANY aMember, aPerson, pModel WHERE
+        aMember : Member & aMember /: ran(mapped) &
+        aPerson : PERSON & aPerson /: Person &
+        pModel : PersonModel
+    THEN
+        IF isFemale(ss) THEN
+            Female_NEW(aPerson)
+        ELSE
+            Male_NEW(aPerson)
+        END ||
+        SetName(aPerson, {firstName(aMember), lastName(familyOf(aMember))})
+        AddPersons(pModel, aPerson)||
+        mapped := mapped \/ {(aPerson |-> aMember)}
+    END
 END
 </pre>

@@ -10,7 +10,7 @@ In Eclipse:
 - Go to **File → New → Other**
 
 <center>
-{% include image.html file="other.png" max-width="850"%}
+{% include image.html file="other.png"%}
 </center>
 
 - Select: BCerT → **Create transformation project**
