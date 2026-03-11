@@ -1,5 +1,5 @@
 ---
-title: Execute the transformation
+title: Instantiate the transformation
 sidebar: mydoc_sidebar
 permalink: /instantiate.html
 toc: true
