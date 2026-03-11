@@ -148,7 +148,7 @@ INVARIANT
     mapped : Person >-> Member  
     & mapped[Male]      <: dom(A_sons_family) \/ ran(A_theFather_family)
     & mapped[Female]    <: dom(A_daughters_family ) \/ ran(A_theMother_family)
-    & A_persons_personModel : Person --> PersonModel    /* a person must be belong to a Person Model */
+    & A_persons_personModel : Person --> PersonModel    /* a person must belong to a Person Model */
     & dom(name) = Person                                /* person name is mandatory */
 INITIALISATION
     mapped := {}

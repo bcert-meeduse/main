@@ -38,19 +38,23 @@ entries:
         - title: 5. Execute the transformation
           url: /execute.html
           output: web
-        
-      - title: "Advanced"
-        output: web
-        subfolderitems:
+         
+        #- title: "Advanced"
+        #output: web
+        #subfolderitems:
           
-          - title: Theorem proving
-            url: /todo.html
-            output: web
-          
-          - title: Refinements
-            url: /todo.html
-            output: web
+        #  - title: Useful tips
+        #    url: /todo.html
+        #    output: web
 
-          - title: B System
-            url: /todo.html
-            output: web
+        #  - title: Theorem proving
+        #    url: /todo.html
+        #    output: web
+          
+        #  - title: Refinements
+        #    url: /todo.html
+        #    output: web
+
+        #  - title: B System
+        #    url: /todo.html
+        #    output: web
