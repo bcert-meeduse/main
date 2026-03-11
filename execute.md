@@ -31,14 +31,18 @@ Step 4 generated a Modeling project in the Eclipse run-time that contains, for e
    - **Execution View** — lists the executable operations of the transformation  
    - **State View** — shows the current values of variables  
 
-   Double-click an operation in the Execution View (e.g., `Member2Person()`) to execute one step of the transformation.  
-   The output model is updated and the invariant is verified at every step.
+Double-click an operation in the **Execution View** (e.g., `Member2Person()`) to execute one step of the transformation.  
+The output model is updated and the invariant is verified at every step.
 
-    <center>
-    {% include image.html file="views.png" %}
-    </center>
+<center>
+{% include image.html file="views.png" %}
+</center>
 
-    {% include callout.html content="For more information about the debugging features of Meeduse please refer to the documentation of Meeduse." type="primary" %}
+{% include info.html content="For more information about the debugging features of Meeduse, please refer to the official Meeduse documentation." type="primary" %}
+
+{% include callout.html content="Do not modify the file manually during interactive debugging. This will break the synchronization and you will need to restart from Step 1." type="danger" %}
+
+{% include callout.html content="When all model elements have been transformed, the State View displays Completed=TRUE." type="success" %}
 
 ## Automatic execution
 
