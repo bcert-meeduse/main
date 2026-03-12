@@ -45,15 +45,28 @@
 
     <script>
         $(document).ready(function() {
-            $("#tg-sb-link").click(function() {
+            $("#tg-sb-link").click(function(e) {
+                e.preventDefault();
+
                 $("#tg-sb-sidebar").toggle();
-                $("#tg-sb-content").toggleClass('col-md-9');
-                $("#tg-sb-content").toggleClass('col-md-12');
-                $("#tg-sb-icon").toggleClass('fa-toggle-on');
-                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+
+                if ($("#tg-sb-sidebar").is(":visible")) {
+                    $("#tg-sb-content")
+                        .removeClass("col-md-12 fullwidth")
+                        .addClass("col-md-9 with-sidebar");
+                } else {
+                    $("#tg-sb-content")
+                        .removeClass("col-md-9 with-sidebar")
+                        .addClass("col-md-12 fullwidth");
+                }
+
+                $("#tg-sb-icon").toggleClass("fa-toggle-on");
+                $("#tg-sb-icon").toggleClass("fa-toggle-off");
             });
         });
     </script>
+
+
 
     {% if page.datatable == true %}
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
@@ -91,7 +104,7 @@
         {% assign content_col_size = "col-md-9" %}
         {% endunless %}
 
-        <div class="{{content_col_size}}" id="tg-sb-content">
+        <div class="{{content_col_size}} with-sidebar" id="tg-sb-content">
             {{content}}
         </div>
 

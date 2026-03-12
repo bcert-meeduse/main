@@ -17,6 +17,7 @@ DEFINITIONS
     SET_PREF_SHOW_EVENTB_ANY_VALUES == TRUE ;
     SET_PREF_INVARIANT_CHECKING == TRUE ;
     SET_PREF_MAXINT == 100 ;
+    SET_PREF_DEFAULT_SETSIZE == 10 ;
 </pre>
 
 - `SET_PREF_MAX_OPERATIONS == 1`  
@@ -31,11 +32,14 @@ DEFINITIONS
 - `SET_PREF_MAXINT == 100`  
   Sets the maximum integer bound used by ProB during animation. Increasing this value may be necessary when models manipulate integers outside the default range.
 
+- `SET_PREF_DEFAULT_SETSIZE == 10`  
+  Defines the default cardinality used by ProB for abstract sets. This is important since animation requires a finite domain for each abstract set.
+
 {% include tip.html content="For interactive debugging, it is recommended to keep the number of enabled operations small and to enable invariant checking, so that the execution trace remains easy to understand and correctness violations are detected immediately." %}
 
 ## Solving value domains for abstract sets
 
-{% include callout.html content="For the transformation to execute correctly, ProB must be able to construct a **sufficient data set** for all abstract sets used in the B machine." type="primary" %} 
+{% include callout.html content="For the transformation to execute correctly, ProB must be able to construct a **sufficient data set** for all abstract sets used in the B machine. One way to achieve this is to use a large fixed domain via `SET_PREF_DEFAULT_SETSIZE`. Another recommended approach is to relate the cardinalities of abstract sets coming from input and output models." type="primary" %} 
 
 In our example, the values of set `MEMBER` are derived from the input model. Therefore, the cardinality of `MEMBER` is known from the beginning of the animation.
 
@@ -48,9 +52,7 @@ PROPERTIES
     card(PERSON) = card(MEMBER)
 </pre>
 
-{% include tip.html content="In practice, ProB behaves as a constraint solver: it computes valuations of abstract sets that satisfy all properties and invariants. By linking the cardinalities of input and output sets, you guarantee the **completeness of the animation** and the successful execution of the transformation.." %}
-
-
+{% include tip.html content="In practice, ProB behaves as a constraint solver: it computes valuations of abstract sets that satisfy all properties and invariants. By linking the cardinalities of input and output sets, you guarantee the **completeness of the animation** and the successful execution of the transformation." %}
 
 ## Meta-model annotation
 
