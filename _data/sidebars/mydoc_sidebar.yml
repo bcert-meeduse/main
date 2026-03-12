@@ -47,9 +47,9 @@ entries:
           url: /tips.html
           output: web 
 
-        - title: Theorem proving
-          url: /todo.html
-          output: web
+        #- title: Theorem proving
+        #  url: /todo.html
+        #  output: web
           
         #  - title: Refinements
         #    url: /todo.html

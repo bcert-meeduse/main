@@ -52,8 +52,9 @@ PROPERTIES
     card(PERSON) = card(MEMBER)
 </pre>
 
-{% include tip.html content="In practice, ProB behaves as a constraint solver: it computes valuations of abstract sets that satisfy all properties and invariants. By linking the cardinalities of input and output sets, you guarantee the **completeness of the animation** and the successful execution of the transformation." %}
+{% include tip.html content="In practice, ProB behaves as a constraint solver: it computes valuations of abstract sets that satisfy all properties and invariants. By linking the cardinalities of abstract sets that are issued from input and output meta-models, you guarantee the **completeness of the animation** and hence the successful application of the transformation on all input model elements." %}
 
+<!--
 ## Meta-model annotation
 
 TO DO
@@ -61,3 +62,4 @@ TO DO
 ## Formatting an Xtext DSL
 
 TO DO
+-->
