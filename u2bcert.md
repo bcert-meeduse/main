@@ -15,9 +15,7 @@ The approach relies on a clear architectural separation between:
 - a **utility machine**, which encapsulates low-level mutations of the target B machine
 - a **transpiler machine**, which defines the semantic mapping from UML to B
 
-## B specifications
-
-👉 [Browse B specifications](./BSpecs/)
+👉 [B specifications](u2bcert/BSpecs)
 
 ## Overview
 
