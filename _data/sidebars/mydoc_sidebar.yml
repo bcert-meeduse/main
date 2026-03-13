@@ -58,3 +58,10 @@ entries:
         #  - title: B System
         #    url: /todo.html
         #    output: web
+      - title: "Powered by BCerT"
+        output: web
+        subfolderitems:
+          
+        - title: UML to B transpiler
+          url: /u2bcert.html
+          output: web
