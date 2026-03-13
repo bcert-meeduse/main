@@ -1,11 +1,9 @@
 ---
-title: Certified UML-to-B Transpilation
+title: U2Bcert — Certified UML-to-B Transpilation
 sidebar: mydoc_sidebar
 permalink: /u2bcert.html
 toc: true
 ---
-
-# U2Bcert — Certified UML-to-B Transpilation
 
 **U2Bcert** is a grammar-to-grammar transpiler from UML state-transition diagrams (defined in PlantUML) to B machines.  
 The transpiler is specified in the B method and entirely proved using **Atelier B**.
@@ -14,8 +12,6 @@ The approach relies on a clear architectural separation between:
 
 - a **utility machine**, which encapsulates low-level mutations of the target B machine
 - a **transpiler machine**, which defines the semantic mapping from UML to B
-
-👉 [B specifications](u2bcert/BSpecs)
 
 ## Overview
 
@@ -27,6 +23,15 @@ The screenshot below illustrates the complete toolchain in action:
 - the preservation of invariants during animation
 
 ![U2Bcert execution overview](u2bcert/docs/transpiler_execution.png)
+
+
+## B Specifications
+- [transpiler.mch](u2bcert/BSpecs/transpiler.mch)
+- [u2bcert.mch](u2bcert/BSpecs/u2bcert.mch)
+- [u2bcertutils.mch](u2bcert/BSpecs/u2bcertutils.mch)
+- [Timer.mch](u2bcert/BSpecs/Timer.mch)
+- [Controller.mch](u2bcert/BSpecs/Controller.mch)
+
 
 ## Proof statistics
 
