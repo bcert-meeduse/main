@@ -17,7 +17,7 @@ The approach relies on a clear architectural separation between:
 
 ## B specifications
 
-[B specifications](u2bcert/BSpecs)
+👉 [Browse B specifications](./BSpecs/)
 
 ## Overview
 
