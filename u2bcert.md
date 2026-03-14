@@ -1,11 +1,11 @@
 ---
-title: U2Bcert — Certified UML-to-B Transpilation
+title: U2BCerT — Certified UML-to-B Transpilation
 sidebar: mydoc_sidebar
 permalink: /u2bcert.html
 toc: true
 ---
 
-**U2Bcert** is a grammar-to-grammar transpiler from UML state-transition diagrams (defined in PlantUML) to B machines.  
+**U2BCerT** is a grammar-to-grammar transpiler from UML state-transition diagrams (defined in PlantUML) to B machines.  
 The transpiler is specified in the B method and entirely proved using **Atelier B**.
 
 The approach relies on a clear architectural separation between:

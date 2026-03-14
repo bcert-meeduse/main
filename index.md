@@ -28,3 +28,24 @@ toc: false
 - **Batch transformation runner:** Transformations can be executed on **multiple models** at once using sequential execution or parallel execution for improved performance on large model collections.
 
 👉 **[Installation guide]({{ "/install.html" | relative_url }})**
+
+## License
+
+BCerT is distributed under the **Eclipse Public License v2.0 (EPL-2.0)**.
+
+<div style="background:#f8f8f8; border-left:5px solid #347DBE; padding:12px; margin:12px 0; font-size:95%;">
+
+<strong>Eclipse Public License — v 2.0</strong><br><br>
+
+THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS  
+ECLIPSE PUBLIC LICENSE ("AGREEMENT"). ANY USE, REPRODUCTION OR  
+DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE  
+OF THIS AGREEMENT.
+
+<br>
+
+<a href="https://www.eclipse.org/legal/epl-2.0/" target="_blank" rel="noopener">
+View the full license text
+</a>
+
+</div>
